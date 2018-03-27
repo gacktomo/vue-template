@@ -27,8 +27,8 @@ export default {
   mounted() {
     this.isLoading = true;
     PostService.getPosts().then((response) => {
-      this.posts = response.posts;
-      this.found = response.found;
+      this.posts = response.list;
+      this.found = response.cnt;
       this.isLoading = false;
     });
   },
