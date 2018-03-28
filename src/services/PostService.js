@@ -8,6 +8,6 @@ export default {
       console.log(response);
       return response.data;
     })
-    .catch(err => console.log('err:', err));
+    .catch(err => console.log(err));
   },
 };

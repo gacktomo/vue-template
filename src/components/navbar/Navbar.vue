@@ -28,7 +28,7 @@ export default {
   name: 'navbar',
   data() {
     return {
-      msg: 'ONSENUI+VUE MOBILE WEB',
+      msg: 'OpenWeatherMap',
     };
   },
   methods: {

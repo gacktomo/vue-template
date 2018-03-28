@@ -1,54 +1,51 @@
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped src="./HomePage.scss">
+<style lang="scss" scoped>
+.page-title {
+  text-align: center;
+}
 </style>
-<template src="./HomePage.html">
-  <div></div>
+
+<template>
+  <v-ons-page>
+    <navbar></navbar>
+    <div class="page-content">
+      <h3 class="page-title">
+        Today's Weather
+      </h3>
+      <loading-indicator :is-loading="isLoading"></loading-indicator>
+      <v-ons-card v-for="post in posts" :key="post.dt">
+        <div class="title">{{post.dt}}</div>
+      </v-ons-card>
+    </div>
+  </v-ons-page>
 </template>
 
 <script>
 import Navbar from '../../components/navbar/Navbar';
+import LoadingIndicator from '../../components/loading-indicator/LoadingIndicator';
+import PostService from '../../services/PostService';
+import Config from '../../config/Config';
 
 export default {
-  name: 'home-page',
+  name: 'posts-page',
   components: {
     Navbar,
+    LoadingIndicator,
   },
   data() {
     return {
-      essentialLinks: [
-        {
-          label: 'Core Docs',
-          link: 'https://vuejs.org',
-          icon: 'fa-book',
-        },
-        {
-          label: 'Gitter Chat',
-          link: 'https://gitter.im/vuejs/vue',
-          icon: 'fa-commenting',
-        },
-        {
-          label: 'Forum',
-          link: 'https://forum.vuejs.org',
-          icon: 'ion-chatboxes',
-        },
-        {
-          label: 'Twitter',
-          link: 'https://twitter.com/vuejs',
-          icon: 'fa-twitter',
-        },
-        {
-          label: 'Docs for this template',
-          link: 'http://vuejs-templates.github.io/webpack/',
-          icon: 'fa-file-text',
-        },
-      ],
+      config: Config,
+      isLoading: false,
+      posts: [],
+      found: 0,
     };
   },
-  methods: {
-    goTo(url) {
-      window.open(url, '_blank');
-    },
+  mounted() {
+    this.isLoading = true;
+    PostService.getPosts().then((response) => {
+      this.posts = response.list;
+      this.found = response.cnt;
+      this.isLoading = false;
+    });
   },
 };
 </script>
-
