@@ -15,27 +15,15 @@ ons-list-item {
 ons-list-item {
   cursor: pointer;
 }
+navbar {
+  margin-bottom:100px;
+}
 </style>
 <template>
 <v-ons-page id="app">
   <v-ons-splitter>
     <v-ons-splitter-side swipeable collapse width="250px" :animation="$ons.platform.isAndroid() ? 'overlay' : 'reveal'" :open.sync="menuIsOpen" @update:open="onUserInteraction">
-      <v-ons-page>
-        <v-ons-toolbar modifier="transparent"></v-ons-toolbar>
-        <div class="header">
-          <img src="./assets/onsenui-logo.png">
-        </div>
-
-        <v-ons-list-title>Onsen UI Essential Links</v-ons-list-title>
-        <v-ons-list>
-          <v-ons-list-item modifier="chevron" v-for="item in essentialLinks" @click="goTo(item.routeName)" :key="item.routeName">
-            <div class="left">
-              <v-ons-icon fixed-width :icon="item.icon"></v-ons-icon>
-            </div>
-            <div class="center">{{ item.label }}</div>
-          </v-ons-list-item>
-        </v-ons-list>
-      </v-ons-page>
+      <side-menu></side-menu>
     </v-ons-splitter-side>
 
     <v-ons-splitter-content>
@@ -46,7 +34,7 @@ ons-list-item {
 </template>
 
 <script>
-import HomePage from './pages/home/HomePage';
+import SideMenu from './components/side-menu/SideMenu';
 import store from './store';
 
 export default {
@@ -57,33 +45,16 @@ export default {
       return store.state.menuIsOpen;
     },
   },
-  data() {
-    return {
-      essentialLinks: [
-        {
-          label: 'Home',
-          routeName: 'home',
-          icon: 'fa-home',
-        },
-        {
-          label: 'About',
-          routeName: 'posts',
-          icon: 'fa-info',
-        },
-      ],
-    };
-  },
   components: {
-    HomePage,
+    SideMenu,
   },
   methods: {
-    goTo(routeName) {
-      this.$router.push({ name: routeName });
-      store.commit('toggleMenu', false);
-    },
     onUserInteraction(event) {
-      // console.log(event);   // on click ons-splitter-side-mask, event always false(?)
+      console.log(event);   // on click ons-splitter-side-mask, event always false(?)
       store.commit('toggleMenu', event);
+    },
+    toggleMenu() {
+      this.$store.commit('toggleMenu', true);
     },
   },
 };
