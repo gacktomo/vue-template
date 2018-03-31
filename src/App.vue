@@ -19,6 +19,7 @@ navbar {
   margin-bottom:100px;
 }
 </style>
+
 <template>
 <v-ons-page id="app">
   <v-ons-splitter>

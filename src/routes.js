@@ -1,9 +1,9 @@
 import HomePage from './pages/home/HomePage';
-import ProfilePage from './pages/profile/ProfilePage';
 import PostsPage from './pages/posts/PostsPage';
+import TestPage from './pages/test/Test';
 
 export default [
   { name: 'home', path: '/', component: HomePage },
-  { name: 'profile', path: '/profile', component: ProfilePage },
   { name: 'posts', path: '/posts', component: PostsPage },
+  { name: 'test', path: '/test', component: TestPage },
 ];
