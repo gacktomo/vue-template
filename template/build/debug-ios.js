@@ -30,6 +30,15 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
     var apk_spinner = ora('Building for iOS....')
     apk_spinner.start()
     const execSync = require('child_process').execSync
+    fs.access("cordova/platform/ios", fs.constants.R_OK | fs.constants.W_OK, (error) => {
+      if (error) {
+        if (error.code === "ENOENT") {
+          execSync('pwd; cd cordova; cordova platform add ios;').toString()
+        } else {
+          return;
+        }
+      }
+    });
     const result =  execSync('pwd; cd cordova; cordova run ios;').toString()
     apk_spinner.stop()
     console.log(result)

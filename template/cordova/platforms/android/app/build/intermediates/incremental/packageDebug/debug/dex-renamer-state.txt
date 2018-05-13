@@ -1,4 +1,0 @@
-#Tue Apr 24 11:29:29 JST 2018
-base.0=/Users/mori/Documents/ehama-date/cordova/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
-renamed.0=classes.dex
-file.0=/Users/mori/Documents/ehama-date/cordova/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex

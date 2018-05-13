@@ -2,6 +2,7 @@ require('./check-versions')()
 
 process.env.NODE_ENV = 'production'
 
+var fs = require("fs")
 var ora = require('ora')
 var rm = require('rimraf')
 var path = require('path')
@@ -26,10 +27,19 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
       chunkModules: false
     }) + '\n\n')
     console.log(chalk.cyan('  webpack Build complete.\n'))
+    const execSync = require('child_process').execSync
 
     var apk_spinner = ora('Building Android APK file....')
     apk_spinner.start()
-    const execSync = require('child_process').execSync
+    fs.access("cordova/platform/android", fs.constants.R_OK | fs.constants.W_OK, (error) => {
+      if (error) {
+        if (error.code === "ENOENT") {
+          execSync('pwd; cd cordova; cordova platform add android;').toString()
+        } else {
+          return;
+        }
+      }
+    });
     const result =  execSync('pwd; cd cordova; cordova build android;').toString()
     apk_spinner.stop()
     console.log(result)
