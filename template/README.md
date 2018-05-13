@@ -1,25 +1,6 @@
 # {{name}}
 
-Onsen UI + Vue + Vuex + Vue Router + Axios + Cordova PWA Starter Project  
-
--------------------------------
-
-## List of features implemented in this project
-1. Side menu navigation 
-2. Application state management using `Vuex`
-3. Page and component creation 
-4. RESTAPI consumption using `axios`
-5. Custom routing on onsenui-vue using vue-router
-
--------------------------------
-
-## Dependencies 
-- [onsenui](https://github.com/OnsenUI/OnsenUI)
-- [vue](https://github.com/vuejs/vue)
-- [vue-onsenui](https://github.com/OnsenUI/OnsenUI/tree/master/bindings/vue)
-- [vue-router](https://github.com/vuejs/vue-router)
-- [vuex](https://github.com/vuejs/vuex)
-- [axios](https://github.com/mzabriskie/axios)
+# {{description}}
 
 -------------------------------
 
@@ -93,10 +74,3 @@ npm run build:ios
 npm run debug:ios
 ```
 -------------------------------
-
-## Reference : 
-- Separate HTML and SCSS file. [link](https://github.com/vuejs/vueify/issues/35)
-- Enable scss working in vue [link](https://github.com/vuejs/vue-loader/issues/363)
-- Vue routing using hash setup. [link](http://router.vuejs.org/en/essentials/getting-started.html)
-- Getting started with vuex. [link](http://vuex.vuejs.org/en/getting-started.html)
-- Delete service worker. [link](https://stackoverflow.com/a/34791693/1843755)
