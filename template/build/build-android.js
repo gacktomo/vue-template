@@ -31,7 +31,7 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
 
     var apk_spinner = ora('Building Android APK file....')
     apk_spinner.start()
-    fs.access("cordova/platform/android", fs.constants.R_OK | fs.constants.W_OK, (error) => {
+    fs.access("cordova/platforms/android", fs.constants.R_OK | fs.constants.W_OK, (error) => {
       if (error) {
         if (error.code === "ENOENT") {
           execSync('pwd; cd cordova; cordova platform add android;').toString()

@@ -1,3 +1,6 @@
 www/*
+platforms/*
 !.gitkeep
 node_modules
+package.json
+package-lock.json

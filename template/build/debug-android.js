@@ -2,6 +2,7 @@ require('./check-versions')()
 
 process.env.NODE_ENV = 'production'
 
+var fs = require("fs")
 var ora = require('ora')
 var rm = require('rimraf')
 var path = require('path')
@@ -30,7 +31,7 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
     var apk_spinner = ora('Building for Android....')
     apk_spinner.start()
     const execSync = require('child_process').execSync
-    fs.access("cordova/platform/android", fs.constants.R_OK | fs.constants.W_OK, (error) => {
+    fs.access("cordova/platforms/android", fs.constants.R_OK | fs.constants.W_OK, (error) => {
       if (error) {
         if (error.code === "ENOENT") {
           execSync('pwd; cd cordova; cordova platform add android;').toString()
