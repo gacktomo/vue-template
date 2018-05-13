@@ -28,7 +28,7 @@
           <v-ons-list-item v-for="course in courses" v-bind:key="course.id">
             <table cellpadding="5">
               <tr>
-                <td>{{ editTime(course.time) }}</td> 
+                <td>\{{ editTime(course.time) }}</td> 
                 <td>{{ course.name }}</td>
               </tr>
               <tr>

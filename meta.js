@@ -15,5 +15,5 @@ module.exports = {
   },
   helpers: {
   },
-  skipInterpolation: '*.vue'
+  skipInterpolation: 'src/**/*.vue'
 }

@@ -1,5 +1,6 @@
 # Vue-template
 
+This is template for vue-cli. 
 Onsen UI + Vue + Vuex + Vue Router + Axios + Cordova + PWA Starter Project  
 This project is based on [onsenui-vue-pwa webpack template](https://github.com/OnsenUI/vue-pwa-webpack)
 
