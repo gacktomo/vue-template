@@ -1,12 +1,6 @@
-# えはまデート(EhamaDate)
+# {{name}}
 
-## Information 
-Onsen UI + Vue + Vue Router + Axios + Cordova PWA Starter Project  
-Please read carefully before use this project starter
-
-1. This project is based on [onsenui-vue-pwa webpack template](https://github.com/OnsenUI/vue-pwa-webpack)
-2. Since I dont need PWA at the moment, so I remove all the script related to PWA in `index.html`. If you want to use PWA, just rename `index-serviceworker.html` to `index.html`
-3. Since I need to access the page via URL in the browser, so instead of using Onsen ui `<v-ons-navigator>` system, I use [vue-router](https://router.vuejs.org/en/) to meet my requirement.
+Onsen UI + Vue + Vuex + Vue Router + Axios + Cordova PWA Starter Project  
 
 -------------------------------
 
