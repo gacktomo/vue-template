@@ -12,8 +12,8 @@ import 'onsenui/css/onsenui.css';
 import App from './App';
 import routes from './routes';
 
-// import 'onsenui/css/onsen-css-components.css';
-import '../static/css/onsen-css-components-pink.min.css';
+import 'onsenui/css/onsen-css-components.css';
+// import '../static/css/onsen-css-components-pink.min.css';
 
 Vue.config.productionTip = false;
 

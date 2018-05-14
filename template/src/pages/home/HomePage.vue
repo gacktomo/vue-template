@@ -14,7 +14,7 @@
     <v-ons-list> 
       <v-ons-list-header>
         <v-ons-icon icon="ion-favorite, material:md-favorite"></v-ons-icon>
-        デートプランを探す
+        リスト
       </v-ons-list-header>
       <v-ons-list-item @click="goRegion">地域:  {{currentArea.name}}</v-ons-list-item>
       <v-ons-list-item @click="goRegion">並び順：人気順</v-ons-list-item>

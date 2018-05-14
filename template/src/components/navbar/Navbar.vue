@@ -31,7 +31,7 @@ export default {
   name: 'navbar',
   props: {
     msg: {
-      default: 'えはまデート',
+      default: 'タイトル',
     },
     navType: {
       default: 'menu',
