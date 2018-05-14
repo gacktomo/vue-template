@@ -7,7 +7,7 @@ This project is based on [onsenui-vue-pwa webpack template](https://github.com/O
 ## Install
 ```
 npm install -g @vue/cli
-vue init gacktomo/vue-template
+vue init gacktomo/vue-template [app_name]
 ```
 -------------------------------
 
