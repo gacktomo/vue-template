@@ -33,10 +33,13 @@ sudo npm install -g cordova
 ```
 2. Install JDK leatest version.  
  Uninstall old version JDK if appear errors.  
- Navigate to /Library/Java/JavaVirtualMachines and remove old jdk directory.  
  For example, to uninstall 8u6:  
  ```
- % rm -rf jdk1.8.0_06.jdk
+ sudo rm -fr /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin
+ sudo rm -fr /Library/PreferencesPanes/JavaControlPanel.prefPane
+ sudo rm -fr ~/Library/Application\ Support/Java
+ cd /Library/Java/JavaVirtualMachines
+ rm -rf jdk1.x.x.x.jdk
  ```
 
 3. Install Android Studio.
